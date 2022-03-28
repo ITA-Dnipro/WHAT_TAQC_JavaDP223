@@ -55,8 +55,6 @@ public abstract class BasePage extends Base{
         } else {
             System.out.println("Button: " + button + " is not active!!!");
         }
-
-
     }
 
     public void clickButtonPreviousPage() {
