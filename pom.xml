@@ -17,12 +17,18 @@
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
-            <version>LATEST</version>
+            <version>4.1.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.1.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
+<<<<<<< HEAD
             <version>LATEST</version>
         </dependency>
 
@@ -30,6 +36,9 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.16.18</version>
+=======
+            <version>7.5</version>
+>>>>>>> e8044c8d10cbf84a2a02a9838b8b221901913f56
         </dependency>
 
         <dependency>
