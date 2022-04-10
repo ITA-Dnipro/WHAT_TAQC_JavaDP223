@@ -1,8 +1,8 @@
-package steps.auth;
+package steps.forgotPassword;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
-import pages.auth.ForgotPasswordPage;
+import pages.forgotPassword.ForgotPasswordPage;
 import steps.BasePageSteps;
 
 import static constants.Constants.FORGOT_PASSWORD_URL;

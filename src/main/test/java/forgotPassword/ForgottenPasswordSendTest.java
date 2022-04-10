@@ -1,9 +1,9 @@
-package auth;
+package forgotPassword;
 
 import base.BaseTest;
 import org.testng.annotations.Test;
 
-public class ForgotPasswordPageTest extends BaseTest {
+public class ForgottenPasswordSendTest extends BaseTest {
 
     @Test
     public void verifyThatUserCanSendForgotPassword() {

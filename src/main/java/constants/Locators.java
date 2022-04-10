@@ -4,6 +4,7 @@ public class Locators {
 
     public interface RegistrationPage {
         String  REGISTRATION_FORM = "//h3[text()='Sign up to WHAT']",
+                REGISTRATION_TITLE = "//h3[text()='Sign up to WHAT']",
                 FIRST_NAME_FIELD = "firstName",
                 LAST_NAME_FIELD = "lastName",
                 EMAIL_ADDRESS_FIELD = "email",
@@ -13,7 +14,13 @@ public class Locators {
                 LOGIN_LINK = "//a[@href='/auth']",
                 BUTTON_BACK = "//button[text()='Back']",
                 MESSAGE_REGISTRATION_DONE = "//div[@class='modal-header']/h4",
-                MESSAGE_REGISTRATION_DONE_TEXT = "//div[@class='modal-window__modal-body___3v1gd modal-body']";
+                MESSAGE_REGISTRATION_DONE_TEXT = "//div[@class='modal-window__modal-body___3v1gd modal-body']",
+                MESSAGE_ALERT_FIRST_NAME_FIELD = "//p[@class='text-danger mb-0'][1]",
+                MESSAGE_ALERT_LAST_NAME_FIELD = "//div[2]/p[@class='text-danger mb-0']",
+                MESSAGE_ALERT_EMAIL_FIELD = "//p[@class='text-danger']",
+                MESSAGE_ALERT_PASSWORD_FIELD = "//div[@class='form-group'][4]/p[@class='text-danger mb-0']",
+                MESSAGE_ALERT_CONFIRM_PASSWORD_FIELD = "//div[@class='form-group'][5]/p[@class='text-danger mb-0']",
+                MESSAGE_ACCOUNT_EXISTS = "//p[@class='text-danger text-center mt-2']";
     }
 
     public interface AuthPage {
@@ -23,6 +30,9 @@ public class Locators {
                 BUTTON_SIGN_IN = "//button[text()='Sign in']",
                 REGISTRATION_LINK = "//a[@href='/registration']",
                 FORGOT_PASSWORD_LINK = "//a[@href='/forgot-password']",
+                MESSAGE_ALERT_EMAIL_FIELD = "//p[@class='text-center text-danger mt-2']",
+
+
                 MESSAGE_ALERT_REQUIRED_EMAIL = "//div[@class='form-group'][1]/p[@class='text-danger']",  //textContent: "This field is required" for emailField
                 MESSAGE_ALERT_REQUIRED_PASSWORD = "//div[@class='form-group'][2]/p[@class='text-danger']", //textContent: "This field is required" for passwordField
                 MESSAGE_ALERT_INVALID_DATA_AFTER_CLICK = "//p[@class='text-center text-danger mt-2']";    // textContent: 'Email' is not a valid email address.

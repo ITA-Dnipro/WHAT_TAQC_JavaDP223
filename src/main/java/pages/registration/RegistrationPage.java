@@ -14,6 +14,8 @@ public class RegistrationPage extends BasePage {
 
     @FindBy(xpath = REGISTRATION_FORM)
     private WebElement registrationForm;
+    @FindBy(xpath = REGISTRATION_TITLE)
+    private WebElement registrationTitle;
     @FindBy(id = FIRST_NAME_FIELD)
     private WebElement firstNameField;
     @FindBy(id = LAST_NAME_FIELD)
@@ -28,6 +30,21 @@ public class RegistrationPage extends BasePage {
     private WebElement buttonSignUp;
     @FindBy(xpath = LOGIN_LINK)
     private WebElement loginLink;
+
+    @FindBy(xpath = MESSAGE_ALERT_FIRST_NAME_FIELD)
+    private WebElement MessageErrorFirstName;
+    @FindBy(xpath = MESSAGE_ALERT_LAST_NAME_FIELD)
+    private WebElement MessageErrorLastName;
+    @FindBy(xpath = MESSAGE_ALERT_EMAIL_FIELD)
+    private WebElement MessageErrorEmail;
+    @FindBy(xpath = MESSAGE_ALERT_PASSWORD_FIELD)
+    private WebElement MessageErrorPassword;
+    @FindBy(xpath = MESSAGE_ALERT_CONFIRM_PASSWORD_FIELD)
+    private WebElement MessageErrorPasswordConfirm;
+    @FindBy(xpath = MESSAGE_ACCOUNT_EXISTS)
+    private WebElement MessageExistingAccount;
+
+
 
     @FindBy(xpath = BUTTON_BACK)
     private WebElement buttonBack;

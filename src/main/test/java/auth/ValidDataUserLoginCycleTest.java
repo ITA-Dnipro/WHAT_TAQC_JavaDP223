@@ -10,7 +10,7 @@ import steps.myProfile.MyProfilePageSteps;
 import java.util.Arrays;
 import java.util.List;
 
-public class ValidDataAuthPageAllRolesTest {
+public class ValidDataUserLoginCycleTest {
 
     @Test
     public void verifyAllRolesCanLogin() {

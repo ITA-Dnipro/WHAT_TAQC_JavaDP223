@@ -6,11 +6,11 @@ import org.testng.annotations.Test;
 import steps.auth.AuthPageSteps;
 import steps.myProfile.MyProfilePageSteps;
 
-public class ValidDataAuthPageOneRoleTest extends BaseTest {
+public class ValidDataUserLoginTest extends BaseTest {
 
-    @Parameters({"roles"})
+
     @Test
-    public void verifyThatUserCanAuthenticate() {
+    public void verifyUserCanLogin() {
 
         authPageSteps
                 .openWhatProjectApp()

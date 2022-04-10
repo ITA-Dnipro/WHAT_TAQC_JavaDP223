@@ -1,4 +1,4 @@
-package pages.registration.data_for_registration;
+package pages.registration.validDataForRegistration;
 
 import java.security.SecureRandom;
 

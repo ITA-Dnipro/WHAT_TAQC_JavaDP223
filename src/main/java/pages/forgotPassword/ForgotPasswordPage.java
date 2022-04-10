@@ -1,4 +1,4 @@
-package pages.auth;
+package pages.forgotPassword;
 
 import lombok.Getter;
 import org.openqa.selenium.WebDriver;

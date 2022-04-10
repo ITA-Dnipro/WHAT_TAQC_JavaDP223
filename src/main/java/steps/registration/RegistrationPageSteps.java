@@ -18,21 +18,22 @@ public class RegistrationPageSteps extends BasePageSteps {
         registrationPage = new RegistrationPage(driver);
     }
 
-    public RegistrationPageSteps verifyRegistrationUrlIslCorrectly(WebDriver driver) {
-        Assert.assertEquals(driver.getCurrentUrl(), REGISTRATION_URL);
+    public RegistrationPageSteps checkRegistrationUrlIslCorrectly(WebDriver driver) {
+        Assert.assertEquals(driver.getCurrentUrl(), REGISTRATION_URL, "Incorrect URL!!!");
         return this;
     }
 
     public RegistrationPageSteps waitRegistrationFormIsRendered() {
         registrationPage.waitRegistrationForm();
+        Assert.assertTrue(registrationPage.getRegistrationForm().isDisplayed(), "'Registration Form' is not displayed!!!");
         return this;
     }
 
     public RegistrationPageSteps checkFirstNameFieldIsEmpty() {
         /**
-         * ‘First Name’ fields are empty by default
+         * ‘First Name’ field is empty by default
          */
-        Assert.assertEquals(registrationPage.getFirstNameField().getAttribute("defaultValue"), "");
+        Assert.assertEquals(registrationPage.getFirstNameField().getAttribute("defaultValue"), "", "‘First Name’ field is not empty by default!!!");
         return this;
     }
 
@@ -43,9 +44,9 @@ public class RegistrationPageSteps extends BasePageSteps {
 
     public RegistrationPageSteps checkLastNameFieldIsEmpty() {
         /**
-         * ‘Last Name’ fields are empty by default
+         * ‘Last Name’ field is empty by default
          */
-        Assert.assertEquals(registrationPage.getLastNameField().getAttribute("defaultValue"), "");
+        Assert.assertEquals(registrationPage.getLastNameField().getAttribute("defaultValue"), "", "'Last Name’ field is not empty by default!!!");
         return this;
     }
 
@@ -56,9 +57,9 @@ public class RegistrationPageSteps extends BasePageSteps {
 
     public RegistrationPageSteps checkEmailAddressFieldIsEmpty() {
         /**
-         * ‘Email address’ fields are empty by default
+         * ‘Email address’ field is empty by default
          */
-        Assert.assertEquals(registrationPage.getEmailAddressField().getAttribute("defaultValue"), "");
+        Assert.assertEquals(registrationPage.getEmailAddressField().getAttribute("defaultValue"), "", "‘Email address’ field is not empty by default!!!");
         return this;
     }
 
@@ -71,7 +72,7 @@ public class RegistrationPageSteps extends BasePageSteps {
         /**
          * ‘Password’ fields are empty by default
          */
-        Assert.assertEquals(registrationPage.getPasswordField().getAttribute("defaultValue"), "");
+        Assert.assertEquals(registrationPage.getPasswordField().getAttribute("defaultValue"), "", "‘Password’ field is not empty by default!!!");
         return this;
     }
 
@@ -84,7 +85,7 @@ public class RegistrationPageSteps extends BasePageSteps {
         /**
          * ‘Confirm password’ fields are empty by default
          */
-        Assert.assertEquals(registrationPage.getConfirmPasswordField().getAttribute("defaultValue"), "");
+        Assert.assertEquals(registrationPage.getConfirmPasswordField().getAttribute("defaultValue"), "", "'Confirm password’ field is not empty by default");
         return this;
     }
 
@@ -94,7 +95,7 @@ public class RegistrationPageSteps extends BasePageSteps {
     }
 
    public RegistrationPageSteps checkThatButtonSignUpIsEnabled() {
-        registrationPage.getButtonSignUp().isEnabled();
+       Assert.assertTrue( registrationPage.getButtonSignUp().isEnabled(), "'Button SignUp' is not enabled!!!");
         return this;
    }
 
@@ -103,8 +104,12 @@ public class RegistrationPageSteps extends BasePageSteps {
         return this;
     }
 
-    public RegistrationPageSteps checkThatUserRegistered() {
+    public RegistrationPageSteps checkRegisterSuccessMessage() {
         Assert.assertEquals(registrationPage.getRegistrationDoneMessage().getAttribute("textContent"), MESSAGE_DONE_REGISTRATION);
+        return this;
+    }
+
+    public RegistrationPageSteps checkRegisterSuccessText() {
         Assert.assertEquals(registrationPage.getRegistrationDoneText().getAttribute("textContent"), MESSAGE_DONE_REGISTRATION_TEXT);
         return this;
     }
@@ -113,5 +118,48 @@ public class RegistrationPageSteps extends BasePageSteps {
         registrationPage.clickButtonBack();
         return new AuthPageSteps(driver);
     }
+
+    public RegistrationPageSteps clickOutField() {
+        registrationPage.getRegistrationTitle().click();
+        return this;
+    }
+
+    public void verifyFirstNameErrorMessage(String error) {
+        System.out.println(registrationPage.getMessageErrorFirstName().getText());
+        Assert.assertEquals(registrationPage.getMessageErrorFirstName().getText(), error,"Message error does not match!!!");
+    }
+
+    public void verifyLastNameErrorMessage(String error) {
+        System.out.println(registrationPage.getMessageErrorLastName().getText());
+        Assert.assertEquals(registrationPage.getMessageErrorLastName().getText(), error,"Message error does not match!!!");
+    }
+
+    public void verifyEmailErrorMessage(String error) {
+        System.out.println(registrationPage.getMessageErrorEmail().getText());
+        Assert.assertEquals(registrationPage.getMessageErrorEmail().getText(), error,"Message error does not match!!!");
+    }
+
+    public void verifyPasswordErrorMessage(String error) {
+        System.out.println(registrationPage.getMessageErrorPassword().getText());
+        Assert.assertEquals(registrationPage.getMessageErrorPassword().getText(), error,"Message error does not match!!!");
+    }
+
+    public void verifyConfirmPasswordErrorMessage(String error) {
+        System.out.println(registrationPage.getMessageErrorPasswordConfirm().getText());
+        Assert.assertEquals(registrationPage.getMessageErrorPasswordConfirm().getText(), error,"Message error does not match!!!");
+    }
+
+    public void verifyExistingAccountErrorMessage(String error) {
+        System.out.println(registrationPage.getMessageExistingAccount().getText());
+        Assert.assertEquals(registrationPage.getMessageExistingAccount().getText(), error,"Message error does not match!!!");
+    }
+
+    public RegistrationPageSteps waitMessageIsRendered() {
+        registrationPage.waitWebElementVisible(registrationPage.getMessageExistingAccount(), ELEMENT_WAIT);
+        Assert.assertTrue(registrationPage.getRegistrationForm().isDisplayed(), "'Message Alert' is not displayed!!!");
+        return this;
+    }
+
+
 
 }

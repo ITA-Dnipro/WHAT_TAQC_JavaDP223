@@ -29,6 +29,11 @@ public class AuthPage  extends BasePage {
     @FindBy(xpath = FORGOT_PASSWORD_LINK)
     private WebElement forgotPasswordLink;
 
+    @FindBy(xpath = MESSAGE_ALERT_EMAIL_FIELD)
+    private WebElement messageAlertEmail;
+
+
+
     @FindBy(xpath = MY_PROFILE_ICON)
     private WebElement myProfileIcon;
     @FindBy(xpath = MY_PROFILE_DROPDOWN_ITEM)
@@ -72,10 +77,5 @@ public class AuthPage  extends BasePage {
     public void clickMyProfileIcon() {
         super.clickButton(myProfileIcon);
     }
-
-//    public void clickLogOut() {
-//        super.clickButton(logOut);
-//    }
-
 
 }

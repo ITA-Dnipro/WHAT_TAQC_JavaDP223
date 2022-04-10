@@ -1,4 +1,4 @@
-package pages.registration.data_for_registration;
+package pages.registration.validDataForRegistration;
 
 import org.testng.annotations.DataProvider;
 
@@ -11,7 +11,7 @@ import static constants.Constants.testDataPaths.CREATED_USERS_DATA_JSON;
 import static net.andreinc.mockneat.unit.user.Emails.emails;
 import static net.andreinc.mockneat.unit.user.Names.names;
 
-public class StaticProvider {
+public class ValidStaticProvider {
 
     /**
      * example

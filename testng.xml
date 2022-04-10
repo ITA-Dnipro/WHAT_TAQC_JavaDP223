@@ -2,27 +2,48 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
 <suite name="All Test Suite">
-    <parameter name="Role" value="Admin"></parameter>
-<!--    <parameter name="Role" value="Mentor"></parameter>-->
-<!--    <parameter name="Role" value="Secretary"></parameter>-->
-<!--    <parameter name="Role" value="Student"></parameter>-->
+
 
     <test verbose="2" preserve-order="true" name="D:/Softserve/WHAT_TAQC_JavaDP223/src">
-        <!--    <parameter name="Role" value="Admin"></parameter>-->
-        <!--    <parameter name="Role" value="Mentor"></parameter>-->
-        <!--    <parameter name="Role" value="Secretary"></parameter>-->
-        <!--    <parameter name="Role" value="Student"></parameter>-->
-        <classes>
-            <class name="auth.ValidDataAuthPageAllRolesTest">
+        <parameter name="Role" value="Admin"></parameter>
+       <classes>
+            <class name="forgotPassword.ForgottenPasswordSendTest">
+                <methods>
+                    <include name="verifyThatUserCanSendForgotPassword"/>
+                </methods>
+            </class>
+            <class name="auth.ValidDataUserLoginTest">
+                <methods>
+                    <include name="verifyUserCanLogin"/>
+                </methods>
+            </class>
+            <class name="registration.ValidDataUserRegistrationTest">
+                <methods>
+                    <include name="verifyPossibilityRegistration"/>
+                </methods>
+            </class>
+            <class name="auth.ValidDataUserLoginCycleTest">
                 <methods>
                     <include name="verifyAllRolesCanLogin"/>
                 </methods>
             </class>
-            <class name="registration.ValidDataRegistrationPageTest">
+            <class name="registration.InvalidDataUserRegistrationTest">
                 <methods>
-                    <include name="verifyUserCanRegisterAsMentor"/>
+                    <include name="verifyErrorMessagesFirstNameField"/>
+                    <include name="verifyErrorMessagesLastNameField"/>
+                    <include name="verifyErrorMessagesEmailField"/>
+                    <include name="verifyErrorMessagesPasswordField"/>
+                    <include name="verifyErrorMessagesPasswordConfirmField"/>
+                    <include name="verifyErrorMessagesAccountAlreadyExists"/>
                 </methods>
             </class>
+           <class name="auth.InvalidDataUserLoginTest">
+               <methods>
+                   <include name="verifyErrorMessagesEmailField"/>
+                   <include name="verifyErrorMessagesPasswordField"/>
+
+               </methods>
+           </class>
         </classes>
     </test>
 </suite>
